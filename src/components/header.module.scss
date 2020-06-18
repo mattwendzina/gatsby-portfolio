@@ -1,0 +1,115 @@
+.Header {
+  padding: 8% 15% 0% 15%;
+  background: #3a3a3a;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  flex: 1 1 100%;
+}
+
+.title a {
+  font-size: 4.5rem;
+  text-decoration: none;
+  color: #2d2d2d;
+  position: relative;
+  color: white;
+}
+
+.title a::before {
+  content: "Matt";
+  position: absolute;
+  top: -19px;
+  left: 7.3px;
+  color: #05d2a5;
+}
+
+.transformLetter {
+  position: relative;
+}
+
+// STYLING FOR THE TITLE WHEN USING
+// .title .transformLetter::after {
+//   content: "";
+//   top: 20px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   width: 12px;
+//   height: 12px;
+//   position: absolute;
+//   font-size: 85px;
+//   transition: 350ms ease-in-out;
+//   background: white;
+//   border-radius: 50%;
+// }
+// .title a:hover .transformLetter::after {
+//   background-color: #ee6352;
+//   transform: scale(1.2) translate(-5px, 0px);
+// }
+
+.title .transformLetter::after {
+  content: "";
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 9px;
+  position: absolute;
+  font-size: 85px;
+  transition: 350ms ease-in-out;
+  background: white;
+}
+.title a:hover .transformLetter::after {
+  background-color: #ee6352;
+  transform: scale(1.2) translate(-2px, 0px);
+}
+.navigation {
+  flex: 1 1 100%;
+}
+
+.navigation ul {
+  display: flex;
+  margin: 0;
+}
+
+.navigation ul li {
+  list-style-type: none;
+  margin: 20px;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+  transition: 250ms ease-in-out;
+}
+
+.links:hover {
+  color: #05d2a5;
+}
+
+.activeNavItem {
+  color: #04cda1;
+}
+
+.blog {
+  position: relative;
+}
+
+// .blog .embelish::before {
+//   content: "";
+//   transition: 1000ms;
+//   position: absolute;
+//   height: 7px;
+//   width: 6px;
+//   border-radius: 50%;
+//   transform: translate(2.3px, 12px);
+//   transition: 250ms ease-in-out ;
+// }
+
+// .blog:hover .embelish::before {
+//   background: #ee6352;
+// }
