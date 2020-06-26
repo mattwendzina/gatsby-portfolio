@@ -7,9 +7,8 @@ import Head from "../components/Head"
 import SimpleHero from "../components/SimpleHero"
 import Banner from "../components/Banner"
 import About from "../components/Home/About"
-import { graphql } from "gatsby"
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <Layout>
       <Head title="Home" />
@@ -58,15 +57,3 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query {
-    defaultbkg: file(relativePath: { eq: "images/paper.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`
