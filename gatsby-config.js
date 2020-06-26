@@ -30,26 +30,12 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 100,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
       },
     },
     "gatsby-transformer-sharp",
+    `gatsby-plugin-sharp`,
   ],
 }

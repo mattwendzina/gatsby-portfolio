@@ -1,11 +1,9 @@
 import React from "react"
-
 import { graphql, useStaticQuery, Link } from "gatsby"
-
 import classes from "./footer.module.scss"
-
 import social from "../constants/social"
 import navigation from "../constants/navigation"
+import StyledHero from "./StyledHero"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`

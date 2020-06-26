@@ -1,14 +1,15 @@
 import React from "react"
 
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Head from "../components/head"
-import SimpleHero from "../components/simpleHero"
+import SimpleHero from "../components/SimpleHero"
 import Banner from "../components/banner"
 import About from "../components/Home/About"
+import { graphql } from "gatsby"
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Head title="Home" />
@@ -57,3 +58,15 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    defaultbkg: file(relativePath: { eq: "images/paper.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

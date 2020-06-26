@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import classes from "./header.module.scss"
-import { FaLinkedin, FaTwitterSquare } from "react-icons/fa"
-import { MdEmail } from "react-icons/md"
 import navigation from "../constants/navigation"
 import social from "../constants/social"
 import { RiMenu3Line } from "react-icons/ri"
+import StyledHero from "./StyledHero"
 
 const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      defaultbkg: file(relativePath: { eq: "images/gray-surface.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+    }
+  `)
+
   const [isOpen, setNav] = useState(false)
 
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
-
-  console.log(isOpen)
-
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   const socialLinks = social.map((link, idx) => {
     return (
@@ -51,7 +50,10 @@ const Header = () => {
   })
 
   return (
-    <header className={classes.Header}>
+    <StyledHero
+      img={data.defaultbkg.childImageSharp.fluid}
+      className={classes.Header}
+    >
       <div className={classes.headerMainContainer}>
         <div className={classes.title}>
           <Link to="/">
@@ -84,7 +86,7 @@ const Header = () => {
           {navigationLinks}
         </ul>
       </div>
-    </header>
+    </StyledHero>
   )
 }
 
