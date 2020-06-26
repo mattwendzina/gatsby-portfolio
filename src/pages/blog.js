@@ -41,13 +41,11 @@ const BlogPage = () => {
   )
 
   return (
-    <div>
-      <Layout>
-        <Head title="Blog" />
-        <h1> Blog</h1>
-        {mappedData}
-      </Layout>
-    </div>
+    <Layout>
+      <Head title="Blog" />
+      <h1> Blog</h1>
+      {mappedData}
+    </Layout>
   )
 }
 

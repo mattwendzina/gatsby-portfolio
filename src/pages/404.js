@@ -3,12 +3,13 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/head"
+import Banner from "../components/banner"
 
 const NotFound = () => {
   return (
     <Layout>
       <Head title="Not Found =(" />
-      <h1> Page not found!</h1>
+      <Banner title="Page not found!"></Banner>
       <Link to="/"> Head home</Link>
     </Layout>
   )

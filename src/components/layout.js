@@ -6,11 +6,11 @@ import Footer from "./footer"
 import "../styles/index.scss"
 import classes from "./layout.module.scss"
 
-const Layout = props => {
+const Layout = ({ children }) => {
   return (
     <div className={classes.Layout}>
       <Header />
-      <div className={classes.mainContent}>{props.children}</div>
+      <div className={classes.mainContent}>{children}</div>
       <Footer />
     </div>
   )

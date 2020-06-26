@@ -1,74 +1,86 @@
 .Header {
-  padding: 8% 15% 0% 15%;
-  background: #3a3a3a;
+  background: var(--backgroundColor1);
+  position: relative;
 }
 
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.headerMainContainer {
+  display: inline-block;
+  padding: 0 15%;
 }
 
 .title {
-  flex: 1 1 100%;
+  position: relative;
+  padding-top: 80px;
 }
 
 .title a {
   font-size: 4.5rem;
-  text-decoration: none;
-  color: #2d2d2d;
-  position: relative;
   color: white;
 }
+.title p {
+  margin: 0;
+  font-size: 6rem;
+}
 
-.title a::before {
-  content: "Matt";
+.firstName {
   position: absolute;
-  top: -19px;
-  left: 7.3px;
-  color: #05d2a5;
+  top: 18px;
+  left: 7.9px;
+  margin: 0;
+  color: var(--primaryColor1);
 }
 
 .transformLetter {
   position: relative;
 }
 
-// STYLING FOR THE TITLE WHEN USING
-// .title .transformLetter::after {
-//   content: "";
-//   top: 20px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: 12px;
-//   height: 12px;
-//   position: absolute;
-//   font-size: 85px;
-//   transition: 350ms ease-in-out;
-//   background: white;
-//   border-radius: 50%;
-// }
-// .title a:hover .transformLetter::after {
-//   background-color: #ee6352;
-//   transform: scale(1.2) translate(-5px, 0px);
-// }
-
 .title .transformLetter::after {
   content: "";
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
+  top: 20px;
+  left: 8.3px;
+  width: 4.5px;
   height: 9px;
   position: absolute;
   font-size: 85px;
   transition: 350ms ease-in-out;
-  background: white;
 }
 .title a:hover .transformLetter::after {
-  background-color: #ee6352;
-  transform: scale(1.2) translate(-2px, 0px);
+  background-color: var(--primaryColor2);
+  transform: scale(1.2) translate(-1px, 0px);
 }
+
 .navigation {
   flex: 1 1 100%;
+}
+
+.navContainerClosed {
+  height: 0;
+  transition: 1000ms;
+  background: var(--backgroundColor1);
+}
+.navContainerOpen {
+  height: 126px;
+  transition: 1000ms;
+  background: var(--backgroundColor1);
+}
+
+.hideLinks {
+  transform: scale(0);
+  list-style-type: none;
+  transition: 1000ms;
+}
+
+ul.showLinks {
+  transition: 1000ms;
+  transform: scale(1);
+  display: flex;
+  flex-direction: column;
+  padding: 0px 12%;
+  margin: 10px auto 0 auto;
+}
+
+ul.showLinks li {
+  list-style-type: none;
 }
 
 .navigation ul {
@@ -88,15 +100,137 @@
 }
 
 .links:hover {
-  color: #05d2a5;
+  color: var(--primaryColor1);
 }
 
 .activeNavItem {
-  color: #04cda1;
+  color: var(--primaryColor1);
 }
 
 .blog {
   position: relative;
+}
+
+.socialMedia {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.socialMedia li {
+  display: inline-block;
+  font-size: 24px;
+  margin: 5px 2px;
+  transition: 300ms ease-in-out;
+}
+
+.socialMedia a {
+  color: var(--primaryColor1);
+  transition: 300ms ease-in-out;
+}
+
+.socialMedia a:last-of-type {
+  margin: 5px 5px;
+}
+
+.socialMedia li:hover {
+  transform: scale(1.1);
+}
+.socialMedia li:hover a {
+  color: var(--mainWhite);
+}
+
+.menuIcon {
+  color: var(--primaryColor1);
+  font-size: 24px;
+  transition: 300ms ease-in-out;
+}
+
+.menuIcon:hover {
+  color: var(--mainWhite);
+}
+
+.menuBtn {
+  display: none;
+}
+
+ul.navLinks {
+  display: flex;
+}
+
+@media screen and (max-width: 800px) {
+  header.Header {
+    text-align: center;
+    padding: 0;
+  }
+
+  .headerMainContainer {
+    padding: 0;
+  }
+
+  ul.navLinks {
+    display: none;
+  }
+
+  .title p {
+    margin: 0;
+    font-size: 4rem;
+  }
+
+  .title a {
+    font-size: 3.5rem;
+  }
+
+  .title a::before {
+    left: 4.3px;
+  }
+
+  .title .transformLetter::after {
+    display: none;
+  }
+
+  .firstName {
+    top: 38px;
+    left: 5.3px;
+  }
+
+  .socialMedia {
+    display: none;
+  }
+  .menuBtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--backgroundColor1);
+    border-radius: 5px;
+    border: 1px solid var(--backgroundColor1);
+    cursor: pointer;
+  }
+  .menuIcon {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Header {
+    padding: 14% 15% 4% 15%;
+  }
+
+  .title a {
+    font-size: 3rem;
+  }
+  .menuIcon {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title a {
+    font-size: 2.5rem;
+  }
+  .menuIcon {
+    font-size: 20px;
+  }
 }
 
 // .blog .embelish::before {
