@@ -11,11 +11,7 @@ const StyledHero = ({ img, className, children, home }) => {
 }
 
 export default styled(StyledHero)`
-  min-height: ${props => (props.home ? "calc(100vh - 150px)" : "unset")};
-  background: ${props =>
-    props.home
-      ? "none"
-      : "linear-gradient(rgb(58, 58, 58,0.8), rgba(58, 58, 58, 0.6))"};
+  background: linear-gradient(rgb(58, 58, 58, 0.8), rgba(58, 58, 58, 0.6));
   background-position: center;
   background-size: cover;
   opacity: 1 !important;
