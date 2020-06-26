@@ -4,6 +4,7 @@ import classes from "./header.module.scss"
 import navigation from "../constants/navigation"
 import social from "../constants/social"
 import { RiMenu3Line } from "react-icons/ri"
+import StyledHero from "./StyledHero"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -49,7 +50,10 @@ const Header = () => {
   })
 
   return (
-    <div className={classes.Header}>
+    <StyledHero
+      img={data.defaultbkg.childImageSharp.fluid}
+      className={classes.Header}
+    >
       <div className={classes.headerMainContainer}>
         <div className={classes.title}>
           <Link to="/">
@@ -82,7 +86,7 @@ const Header = () => {
           {navigationLinks}
         </ul>
       </div>
-    </div>
+    </StyledHero>
   )
 }
 
