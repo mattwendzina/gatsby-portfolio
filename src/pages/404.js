@@ -1,9 +1,9 @@
 import React from "react"
 
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import Head from "../components/head"
-import Banner from "../components/banner"
+import Layout from "../components/Layout"
+import Head from "../components/Head"
+import Banner from "../components/Banner"
 
 const NotFound = () => {
   return (

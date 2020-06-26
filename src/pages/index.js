@@ -2,10 +2,10 @@ import React from "react"
 
 // import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Head from "../components/head"
+import Layout from "../components/Layout"
+import Head from "../components/Head"
 import SimpleHero from "../components/SimpleHero"
-import Banner from "../components/banner"
+import Banner from "../components/Banner"
 import About from "../components/Home/About"
 import { graphql } from "gatsby"
 
