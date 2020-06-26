@@ -14,12 +14,12 @@ const Title = ({ title, subtitle }) => {
 }
 
 const TitleWrapper = styled.div`
-  margin: 2rem -20px;
-  background: var(--backgroundColor1);
   h4 {
     font-size: 4rem;
     text-align: center;
-    color: var(--primaryColor2);
+    color: var(--mainWhite);
+    padding: 10px 0;
+    font-weight: 300;
   }
 `
 

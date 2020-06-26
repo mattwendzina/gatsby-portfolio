@@ -1,0 +1,26 @@
+.About {
+  margin: 2rem -20px;
+  padding: 10px;
+  background: var(--backgroundColor1);
+}
+
+.aboutContent {
+  display: flex;
+  align-items: center;
+}
+
+.aboutPicture {
+  flex: 1;
+  max-width: 250px;
+}
+
+.aboutPicture img {
+  margin: 0;
+  box-shadow: 2px 2px 1px var(--primaryColor1);
+}
+
+.aboutText {
+  flex: 3;
+  padding: 20px;
+  color: var(--mainWhite);
+}
