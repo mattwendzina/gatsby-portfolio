@@ -2,7 +2,6 @@ import React from "react"
 import Title from "../Title"
 import classes from "./about.module.css"
 import Img from "gatsby-image"
-import StyledHero from "../StyledHero"
 import { useStaticQuery, graphql } from "gatsby"
 
 const aboutImage = graphql`
@@ -14,25 +13,14 @@ const aboutImage = graphql`
         }
       }
     }
-    defaultbkg: file(relativePath: { eq: "images/gray-surface.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
   }
 `
 
 const About = () => {
   const { headshotImage } = useStaticQuery(aboutImage)
-  const { defaultbkg } = useStaticQuery(aboutImage)
 
   return (
-    <StyledHero
-      img={defaultbkg.childImageSharp.fluid}
-      className={classes.About}
-    >
+    <div className={classes.About}>
       <Title title="About" />
       <div className={classes.aboutContent}>
         <div className={classes.aboutPicture}>
@@ -59,7 +47,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </StyledHero>
+    </div>
   )
 }
 
