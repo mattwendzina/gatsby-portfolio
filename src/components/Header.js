@@ -12,7 +12,7 @@ const Header = () => {
       defaultbkg: file(relativePath: { eq: "images/gray-surface.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -51,6 +51,7 @@ const Header = () => {
 
   return (
     <StyledHero
+      // fadeIn="true"
       img={data.defaultbkg.childImageSharp.fluid}
       className={classes.Header}
     >

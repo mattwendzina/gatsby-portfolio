@@ -4,11 +4,11 @@
 }
 
 .headerMainContainer {
-  display: inline-block;
   padding: 0 15%;
 }
 
 .title {
+  display: inline-block;
   position: relative;
   padding-top: 80px;
 }
@@ -56,12 +56,10 @@
 .navContainerClosed {
   height: 0;
   transition: 1000ms;
-  background: var(--backgroundColor1);
 }
 .navContainerOpen {
   height: 126px;
   transition: 1000ms;
-  background: var(--backgroundColor1);
 }
 
 .hideLinks {
@@ -165,6 +163,7 @@ ul.navLinks {
 
   .headerMainContainer {
     padding: 0;
+    text-align: center;
   }
 
   ul.navLinks {
@@ -201,9 +200,9 @@ ul.navLinks {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--backgroundColor1);
+    background: none;
     border-radius: 5px;
-    border: 1px solid var(--backgroundColor1);
+    border: none;
     cursor: pointer;
   }
   .menuIcon {
@@ -212,10 +211,6 @@ ul.navLinks {
 }
 
 @media screen and (max-width: 600px) {
-  .Header {
-    padding: 14% 15% 4% 15%;
-  }
-
   .title a {
     font-size: 3rem;
   }
@@ -225,6 +220,9 @@ ul.navLinks {
 }
 
 @media screen and (max-width: 400px) {
+  .title p {
+    font-size: 3rem;
+  }
   .title a {
     font-size: 2.5rem;
   }
